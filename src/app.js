@@ -5,6 +5,7 @@ const hbs = require('hbs');
 require('dotenv').config()
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // Define paths for express config
 const publicDir = path.join(__dirname, '../public')
@@ -107,6 +108,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(8080, () => {
-    console.log('Server is up on port 8080')
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`)
 })
